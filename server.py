@@ -39,9 +39,15 @@ class Server:
 
     def is_online(self):
         return self.current_state.__eq__('running')
+    
+    def is_offline(self):
+        return self.current_state.__eq__('offline')
+
+    def is_stopping(self):
+        return self.current_state.__eq__('stopping')
 
     def __str__(self): # add to this as needed
-        return f"Name: {self.name}  ID: {self.server_id}  Status: {self.current_state}"
+        return f"Name: {self.name}, Status: {self.current_state}"
     
 def convert_to_dhm(miliseconds):
     seconds = miliseconds / 1000

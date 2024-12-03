@@ -30,3 +30,18 @@ def get_servers():
         servers.append(Server(json, get_server_status))
 
     return servers
+
+def start_server(server_id):
+    response = requests.post(f"{PANEL_URL}/api/client/servers/{server_id}/power", headers=headers, json={"signal": "start"})
+
+    return response.status_code
+
+def stop_server(server_id):
+    response = requests.post(f"{PANEL_URL}/api/client/servers/{server_id}/power", headers=headers, json={"signal": "stop"})
+
+    return response.status_code
+
+def kill_server(server_id):
+    response = requests.post(f"{PANEL_URL}/api/client/servers/{server_id}/power", headers=headers, json={"signal": "kill"})
+
+    return response.status_code
