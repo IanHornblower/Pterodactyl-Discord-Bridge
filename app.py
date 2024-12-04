@@ -118,7 +118,7 @@ async def start(interaction: discord.Interaction):
 
             match result:
                 case 204:
-                    message = f"Stopping: {selected_server.name}"
+                    message = f"Starting: {selected_server.name}"
                 case 401:
                     message = f"Unauthorized"
                 case 404:
