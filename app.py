@@ -41,7 +41,7 @@ async def on_ready():
 
     periodic.start()
 
-    print(f"Bot is online as {bot.user}")
+    print(f"Bot is online as {bot.user}, running version: {VERSION}")
 
 @tasks.loop(seconds=API_PULL_INTERVAL)
 async def periodic():
